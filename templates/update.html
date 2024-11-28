@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+</head>
+<body>
+    <h1>Update Student</h1>
+    <form action="/update/{{ student[0] }}" method="post">
+        <input type="text" name="name" value="{{ student[1] }}" required>
+        <input type="email" name="email" value="{{ student[2] }}" required>
+        <input type="text" name="phone" value="{{ student[3] }}" required>
+        <input type="text" name="course" value="{{ student[4] }}" required>
+        <button type="submit">Update</button>
+    </form>
+    {% extends 'layout.html' %}
+
+{% block content %}
+<h2>Edit Student</h2>
+<form action="/update/{{ student[0] }}" method="post" class="student-form">
+    <input type="text" name="name" value="{{ student[1] }}" required>
+    <input type="email" name="email" value="{{ student[2] }}" required>
+    <input type="text" name="phone" value="{{ student[3] }}" required>
+    <input type="text" name="course" value="{{ student[4] }}" required>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
+
+</body>
+</html>
